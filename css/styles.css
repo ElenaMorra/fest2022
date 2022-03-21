@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+    background: url(../images/Hexagon.svg), rgb(184, 235, 215);
+    /* background-blend-mode: multiply; */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.myNav{
+    padding: 10px 0 10px 10px;    
+    text-transform: uppercase;    
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.myNav .nav_info{
+    float: right;
+    display: block;
+}
+
+.myNav  li{
+	font-size: 15px;
+}
+
+.myNav .info{
+    display: block;
+    list-style: none;   
+}
+
+.info li{
+    padding-top: 10px;
+}
+
+.about {
+    margin: 200px auto 50px auto;
+}
+
+.about h1, h2, h3{
+    /* text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+                 10px 20px 5px rgba(0,0,0,0.05),
+                 -10px 20px 5px rgba(0,0,0,0.05); */
+    margin: 30px auto;
+    font-weight: bold;
+}
+.about h1{
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+}
+
+.about h2{
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.about h3{
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about p, li{
+    font-size: 24px;
+    color: #fff;
+}
+.myNav span{
+ color: rgb(65, 107, 206);
+ padding-right: 10px;
+}
+.mods-item{
+   padding: 20px 30px;    
+   font-size: 12px;
+}
+.mods-item h5{
+    color: rgb(185, 184, 184);
+    padding-bottom: 10px;   
+}
+.mods-item li{
+    text-align: left;
+	font-size: 12px;
+}
+.mods-item p{
+    padding-top: 10px;
+    text-align: justify;
+    color: #fff;
+}
+
+.mods-item img{
+    width: 200px;
+    height: 200px;
+	border-radius: 15px;
+}
+.mods .mod_btn, .gallery .mod_btn{
+    /* width: 220px; */
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.mods .mod_btn:before , .gallery .mod_btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.mods .mod_btn:active,  .gallery .mod_btn:active{
+    color: #000
+}
+
+.mods .mod_btn:active:after , .gallery .mod_btn:active:after{
+    background: transparent;
+}
+
+.mods .mod_btn:hover:before , .gallery .mod_btn:hover::before{
+    opacity: 1;
+}
+
+.mods .mod_btn:after , .gallery .mod_btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #212529;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.gallery{
+ margin: 100px auto;
+}
+
+.gallery h2, .mods h2{
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    
+}
+
+.gallery img{
+    border: 3px solid rgb(119, 116, 116);
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+footer {
+    padding: 30px 0;
+    /* height: 500px; */
+}
+ .footer .f_btn{
+    width: 100%;
+    height: 50px;   
+    margin: 50px auto;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #fff;     
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+ }
+ .footer .f_btn:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 200px;
+    margin-left: 50px;
+    background: #fff;
+    background: linear-gradient(
+        to bottom,
+        rgb(65, 107, 206) 0%,
+        rgb(65, 107, 206) 50%,
+        rgb(65, 107, 206) 100%
+    );
+    left: -40px;
+    top: -100px;
+    z-index: 1;
+    transform: rotate(45deg);
+    position: absolute;
+    animation: movingFlare 3s ease-in-out 0.05s infinite;
+  }
+   
+  @keyframes movingFlare {
+    0% {
+      left: -30px;
+      margin-left: 0px;
+    }
+    30% {
+      left: 110%;
+      margin-left: 80px;
+    }
+    100% {
+      left: 110%;
+      margin-left: 80px;
+    }
+  }
